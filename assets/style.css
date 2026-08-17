@@ -1,0 +1,499 @@
+body{
+    position: relative;
+    padding: 18px 0px 0px 0px;
+    background-color: #9CB080;
+    color: #273338;
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 16px;
+    color: rgb(247, 236, 236);
+    background-color: #2B5748;
+    z-index: 10;
+}
+
+header h1{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 8px;
+}
+
+header a{
+    text-decoration: none;
+    color: rgb(247, 236, 236);
+    margin-right: 12px;
+}
+
+/*the home page*/
+#hero{
+    background-image: url('./images/hero.jpg');
+    background-size: 100% 100%;
+    min-height: 500px;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 24px;
+}
+
+#hero div{
+    padding-top: 250px;
+}
+
+#hero h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: rgb(247, 236, 236);
+}
+
+#hero p{
+    font-size: 16px;
+    color: rgb(247, 236, 236);
+}
+
+#specials{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 56px;
+}
+
+.special{
+    box-shadow: 3px 4px 10px rgb(68, 67, 67);
+    background-color: #618764;
+    display: grid;
+    width: 40%;
+    height: 400px;
+    grid-template-rows: repeat(2, 1fr);
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media (width <= 768px) {
+    .special{
+        box-shadow: 3px 4px 10px rgb(68, 67, 67);
+        background-color: #618764;
+        width: 60%;
+        display: block;
+        height: 425px;
+        padding: 0px;
+        text-align: center;
+        border-radius: 20px;
+        overflow:hidden;
+        cursor: pointer;
+    }
+
+    .special img{
+        width: 100%;
+        height: min-content;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .special article{
+        height: 10px
+    }
+}
+
+.special:hover{
+    box-shadow: 3px 5px 16px rgb(41, 40, 40);
+}
+
+.special img{
+    object-fit: 100% 100%;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.special article{
+    line-height: 12px;
+    height: 150px;
+    padding: 0px 12px;
+}
+
+.special article h3{
+    font-size: 18px;
+}
+
+.special article .desc{
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.special article #id{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#value{
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: #618764;
+    color: #273338;
+    box-shadow: 4px 4px 4px #2B5748;
+    width: 500px;
+    border-radius: 35px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    height: 60px;
+    align-items: center;
+    background-color: #2B5748;
+    margin-top: 32px;
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(247, 236, 236);
+}
+
+/*the service page*/
+#services{
+    padding-top: 80px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #9CB080;
+}
+
+#services span{
+    position: relative; /* 1. Anchors the ::before element inside the span */
+    overflow: hidden;    /* Keeps blurred edges from spilling past the border */
+    width: 20%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 4px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 4px rgb(164, 164, 164);
+    cursor: pointer;
+}
+
+#services span::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease; /* Smooth hover effect */
+    pointer-events: none; /* <--- THIS IS CRITICAL FOR CLICKS TO WORK */
+}
+
+#services span:hover::before{
+    /* to have color on image we put the image on the "radial-gradient"
+    background: radial-gradient(circle at 50% 75%, rgb(168, 168, 168), rgb(227, 226, 226)), url('./images/island.jpg'); */
+    content: "";
+    filter: blur(8px) grayscale(50%);
+}
+
+#services span div{
+    line-height: 10px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+#services span div h1 {
+    position: relative;
+    z-index: 1;
+    transition: z-index 0.2s ease;
+    color: #1c1c1c;
+}
+
+#services span p{
+    position: relative;
+    z-index: 1;
+    color: rgb(248, 235, 235);
+    line-height: 24px;
+}
+
+#about_us{
+    padding-top: 50px;
+    text-align: center;
+}
+
+#about_us h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#about_us #desc{
+    font-size: 18px;
+    color: #9CB080;
+    background: linear-gradient(#2B5748, #39725f);
+    padding: 16px 32px;
+    margin: 0px 64px;
+    margin-bottom: 32px;
+    border: solid #273338 2px;
+    box-shadow: 4px 4px 12px #273338;
+    border-radius: 32px;
+    z-index: 0;
+}
+
+#values{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+#values span{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 250px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgb(146, 146, 146);
+    background: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#values h2{
+    font-size: 32px;
+}
+
+#about_us span{
+    text-align: center;
+}
+
+#about_us .img{
+    background-image: var(--bg);
+    background-size: 100% 100%;
+    box-shadow: 3px 4px 10px rgb(104, 104, 104);
+    font-weight: 300;
+    font-size: large;
+    width: 25%;
+    max-height: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(250, 237, 237);
+    margin-bottom: 32px;
+    height: 300px;
+}
+
+#contact{
+    margin-top: 70px;
+    padding-left: 12px;
+}
+
+input{
+    height: 20px;
+    width: 300px;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0px 0px 4px rgb(98, 98, 98);
+    border-radius: 5px;
+    padding: 4px;
+    position: relative;
+}
+
+textarea{
+    height: 56px;
+    border: none;
+    padding: 4px;
+    box-shadow: 0px 0px 4px rgb(98, 98, 98);
+    border-radius: 5px;
+    display: block;
+    width: 300px;
+}
+
+button{
+    padding: 18px;
+    font-size: 18px;
+    transition: 0.5;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+    background-color: #2B5748;
+    color: #1c1c1c;
+    cursor: pointer;
+} 
+
+button:hover{
+    opacity: 0.9;
+}
+
+button:active{
+    opacity: 0.8;
+}
+
+/*new div for the pop travel*/
+/* 1. The Dark Overlay that covers the whole screen */
+.trip-modal {
+    position: fixed; /* This pulls it out of the normal layout */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    display: flex;
+    justify-content: center; /* Centers the box horizontally */
+    align-items: center; /* Centers the box vertically */
+    z-index: 9999; /* Forces it to be on top of everything else */
+}
+
+/* 2. The actual white popup box */
+.trip-modal .modal-content {
+    background: #9CB080;
+    color: #273338;
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    height: 60vh;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 3. The Close Button */
+.trip-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Keeps the X above the image/text */
+}
+
+/* 4. Left side (Image) */
+.trip-modal .modal-left {
+    flex: 1; /* Takes exactly 50% of the box */
+}
+.trip-modal .modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 5. Right side (Text) */
+.trip-modal .modal-right {
+    flex: 1; /* Takes the other 50% */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trip-modal .modal-right .book-btn{
+    background-color: #2B5748;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   RESERVATION / PAYMENT SCREEN STYLES
+   ========================================================== */
+
+/* The main container for the form */
+.modal-reserving {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: -12px;
+    gap: 24px; /* Adds perfect spacing between inputs */
+}
+
+.modal-content .close-btn{
+    margin-top: 0px;
+}
+
+/* The Trip Title */
+.modal-reserving h2 {
+    font-size: 32px;
+    color: #1c1c1c; /* Your theme color */
+    margin-bottom: 10px;
+}
+
+/* The Input Fields (Date and Number of People) */
+.modal-reserving input {
+    width: 80%;
+    max-width: 350px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* When the user clicks on an input field */
+.modal-reserving input:focus {
+    border-color: #9CB080;
+    box-shadow: 0 0 8px rgba(156, 176, 128, 0.4);
+}
+
+/* The dynamically calculated total price */
+.modal-reserving .total-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1c1c1c;
+    border-radius: 10px;
+    border: 1px dashed #9CB080;
+    margin: 10px 0;
+}
+
+/* The Confirm Button */
+.modal-reserving .confirm-btn {
+    width: 80%;
+    max-width: 350px;
+    padding: 15px;
+    background-color: #2B5748;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button Hover Effect */
+.modal-reserving .confirm-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px); /* Lifts the button slightly */
+}
+
+.modal-reserving .confirm-btn:active {
+    opacity: 0.6;
+}
