@@ -1,4 +1,5 @@
 body{
+    font-family: 'Hightower Text', Georgia, serif;
     position: relative;
     padding: 18px 0px 0px 0px;
     background-color: #9CB080;
@@ -22,7 +23,8 @@ header{
 
 header h1{
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 900;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 header nav{
@@ -58,6 +60,7 @@ header a{
     font-weight: bold;
     margin-bottom: 8px;
     color: rgb(247, 236, 236);
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 #hero p{
@@ -79,7 +82,7 @@ header a{
     width: 40%;
     height: 400px;
     grid-template-rows: repeat(2, 1fr);
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     text-align: center;
     border-radius: 20px;
     overflow: hidden;
@@ -131,6 +134,7 @@ header a{
 
 .special article h3{
     font-size: 18px;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 .special article .desc{
@@ -152,7 +156,6 @@ header a{
     background-color: #618764;
     color: #273338;
     box-shadow: 4px 4px 4px #2B5748;
-    width: 500px;
     border-radius: 35px;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -227,6 +230,7 @@ footer a{
     z-index: 1;
     transition: z-index 0.2s ease;
     color: #1c1c1c;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 #services span p{
@@ -236,6 +240,8 @@ footer a{
     line-height: 24px;
 }
 
+/*the about us part*/
+
 #about_us{
     padding-top: 50px;
     text-align: center;
@@ -244,6 +250,7 @@ footer a{
 #about_us h2{
     font-size: 40px;
     font-weight: bold;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 #about_us #desc{
@@ -266,21 +273,9 @@ footer a{
     margin-bottom: 18px;
 }
 
-#values span{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 250px;
-    width: 300px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 4px rgb(146, 146, 146);
-    background: pink;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #values h2{
     font-size: 32px;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 #about_us span{
@@ -304,13 +299,25 @@ footer a{
     height: 300px;
 }
 
+#values .img:hover{
+    box-shadow: 4px 4px 8px rgb(130, 130, 130);
+}
+
+/*the contact page*/
+
+#au{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #contact{
     margin-top: 70px;
     padding-left: 12px;
 }
 
 input{
-    height: 20px;
+    height: 24px;
     width: 300px;
     margin-bottom: 16px;
     border: none;
@@ -318,9 +325,11 @@ input{
     border-radius: 5px;
     padding: 4px;
     position: relative;
+    font-size: 16px;
 }
 
 textarea{
+    font-size: 16px;
     height: 56px;
     border: none;
     padding: 4px;
@@ -442,6 +451,7 @@ button:active{
     font-size: 32px;
     color: #1c1c1c; /* Your theme color */
     margin-bottom: 10px;
+    font-family: 'LEMON MILK', sans-serif;
 }
 
 /* The Input Fields (Date and Number of People) */
